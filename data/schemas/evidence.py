@@ -1,4 +1,4 @@
-"""Scientific evidence record schema."""
+"""Scientific evidence record schema with provenance and governance metadata."""
 
 from datetime import date
 
@@ -17,3 +17,10 @@ class EvidenceRecord(BaseModel):
     doi: str | None = None
     abstract: str | None = None
     tags: list[str] = Field(default_factory=list)
+    database: str | None = None
+    database_version: str | None = None
+    ingestion_timestamp: str | None = None
+    checksum: str | None = None
+    license: str | None = None
+    retention_class: str | None = None
+    third_party_sharing_allowed: bool = False
